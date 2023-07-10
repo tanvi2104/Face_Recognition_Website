@@ -1,0 +1,9 @@
+.Tilt {
+	background: rgb(160,24,155);
+  	background: linear-gradient(90deg, rgba(160,24,155,1) 17%, rgba(100,173,227,1) 45%, rgba(0,124,255,1) 100%);
+}
+
+.img{
+  display: flex;
+  justify-content: center;
+}
