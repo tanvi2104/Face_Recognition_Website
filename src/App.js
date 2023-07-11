@@ -21,10 +21,7 @@ const pOp={
 function App() {
   return (
     <div className="App">
-      <ParticlesBg className='particles
-      position: "absolute",zIndex: -1,top: 0,left: 0' 
-        params={pOp}
-      />
+      <ParticlesBg className='particles' color="#F0F8FF" num={50} type="cobweb" bg={true} params={pOp}/>
       <Navigation />
       <Logo />
       <Rank />
