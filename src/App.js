@@ -20,22 +20,26 @@ class App extends Component{
     super();
     this.state = {
       input: '',
+      imageURL: '',
+
     }
   }
 
   onInputChange = (event) => {
-    console.log(event.target.value);
+    this.setState({input: event.target.value});
   }
 
   onButtonSubmit = () => {
-    console.log('click');
+
+    this.setState({imageURL: this.state.input});
     app.models
     .predict(
-      "505388a85bf9452e8389068664ea7337",
-      "https://samples.clarifai.com/metro-north.jpg")
+      //"505388a85bf9452e8389068664ea7337",
+      'https://www.clarifai.com/models/face-detection',
+      this.state.input)
     .then(
     function(response){
-      console.log(response);
+      console.log(response.outputs[0].data.regions[0].region_info.bounding_box);
     },
     function(err){
 
@@ -55,7 +59,7 @@ class App extends Component{
       onButtonSubmit={this.onButtonSubmit}
       />
       
-      <FaceRecognition />
+      <FaceRecognition imageURL={ this.state.imageURL} />
     </div>
   );
 }

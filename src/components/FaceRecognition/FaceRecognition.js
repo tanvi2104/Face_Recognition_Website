@@ -1,9 +1,11 @@
 import React from 'react';
 
-const FaceRecognition = () => {
+const FaceRecognition = ({ imageURL }) => {
 	return (
-		<div className='center'>
-			<img alt="img" src="https://samples.clarifai.com/metro-north.jpg"  />
+		<div className='center ma'>
+			<div className='absolute mt2'>
+				<img alt="img" src={ imageURL } width='500px' height='auto' />
+			</div>
 		</div>
 	);
 }
